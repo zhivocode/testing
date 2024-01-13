@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use Zhivocode\Testing\Engine;
+
+include_once __DIR__ . '/vendor/autoload.php';
+
+$options = array_merge(['filter' => $argv[1] ?? null], getopt('', ['filter:']));
+
+$exitCode = (new Engine())
+    ->load(__DIR__ . '/test')
+    ->run($options);
+
+exit($exitCode);
+

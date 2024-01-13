@@ -1,0 +1,16 @@
+vendor
+.env
+.env.backup
+.env.testing
+*.cache
+.idea
+.vscode
+phpcs.xml
+phpunit.xml
+.phpstorm.meta.php
+.DS_Store
+.php_cs
+build
+composer.lock
+coverage
+psalm.xml
