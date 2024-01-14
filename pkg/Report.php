@@ -25,7 +25,7 @@ final class Report
      */
     public function fail(string $prefix, string $name, string $message, string|int|float ...$arguments): void
     {
-        $this->messages[] = $prefix . "\e[1m\e[31m❌ \e[0m\e[21m$name - " . sprintf($message, ...$arguments);
+        $this->messages[] = $prefix . "\e[31m\e[1m❌ \e[21m\e[0m$name - " . sprintf($message, ...$arguments);
         $this->countFail++;
     }
 
@@ -41,7 +41,7 @@ final class Report
      */
     public function fatal(string $prefix, string $name, string $message, string|int|float ...$arguments): void
     {
-        $this->messages[] = $prefix . "\e[1m\e[91m⚡ \e[0m\e[21m$name - " . sprintf($message, ...$arguments);
+        $this->messages[] = $prefix . "\e[91m\e[1m⚡ \e[21m\e[0m$name - " . sprintf($message, ...$arguments);
         $this->isFatal    = true;
     }
 
@@ -58,7 +58,7 @@ final class Report
      */
     public function skip(string $prefix, string $name, string $message, string|int|float ...$arguments): void
     {
-        $this->messages[] = $prefix . "\e[1m\e[34m⏭ \e[0m\e[21m$name - " . sprintf($message, ...$arguments);
+        $this->messages[] = $prefix . "\e[34m\e[1m⏭ \e[21m\e[0m$name - " . sprintf($message, ...$arguments);
         $this->countSkip++;
     }
 
@@ -73,7 +73,7 @@ final class Report
      */
     public function success(string $prefix, string $name): void
     {
-        $this->messages[] = $prefix . "\e[1m\e[32m✔ \e[0m\e[21m$name";
+        $this->messages[] = $prefix . "\e[32m\e[1m✔ \e[21m\e[0m$name";
         $this->countSuccess++;
     }
 
@@ -87,7 +87,7 @@ final class Report
      */
     public function subtest(string $prefix, string $name): void
     {
-        $this->messages[] = $prefix . "\e[1m\e[34m↳ \e[0m\e[21m$name";
+        $this->messages[] = $prefix . "\e[34m\e[1m↳ \e[21m\e[0m$name";
     }
 
     /**

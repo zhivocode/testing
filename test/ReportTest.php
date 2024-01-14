@@ -23,7 +23,7 @@ class ReportTest
         $output = ob_get_contents();
         ob_end_clean();
 
-        if ($output !== "\e[1m\e[31m❌ \e[0m\e[21mtest - test\n------\nУспешно: 0\nОшибок: 1\nПропущено: 0\n------\n") {
+        if ($output !== "\e[31m\e[1m❌ \e[21m\e[0mtest - test\n------\nУспешно: 0\nОшибок: 1\nПропущено: 0\n------\n") {
             $test->fail('Выводимое сообщение не соответствует ожидаемому');
         }
     }
@@ -42,7 +42,7 @@ class ReportTest
         $output = ob_get_contents();
         ob_end_clean();
 
-        if ($output !== "prefix\e[1m\e[31m❌ \e[0m\e[21mtest - test\n------\nУспешно: 0\nОшибок: 1\nПропущено: 0\n------\n") {
+        if ($output !== "prefix\e[31m\e[1m❌ \e[21m\e[0mtest - test\n------\nУспешно: 0\nОшибок: 1\nПропущено: 0\n------\n") {
             $test->fail('Выводимое сообщение не соответствует ожидаемому');
         }
     }
@@ -62,7 +62,7 @@ class ReportTest
         $output = ob_get_contents();
         ob_end_clean();
 
-        if ($output !== "\e[1m\e[31m❌ \e[0m\e[21mtest - test\n\e[1m\e[31m❌ \e[0m\e[21mtest - test\n------\nУспешно: 0\nОшибок: 2\nПропущено: 0\n------\n") {
+        if ($output !== "\e[31m\e[1m❌ \e[21m\e[0mtest - test\n\e[31m\e[1m❌ \e[21m\e[0mtest - test\n------\nУспешно: 0\nОшибок: 2\nПропущено: 0\n------\n") {
             $test->fail('Выводимое сообщение не соответствует ожидаемому');
         }
     }
@@ -81,7 +81,7 @@ class ReportTest
         $output = ob_get_contents();
         ob_end_clean();
 
-        if ($output !== "\e[1m\e[91m⚡ \e[0m\e[21mtest - test\n------\nУспешно: 0\nОшибок: 0\nПропущено: 0\n------\n") {
+        if ($output !== "\e[91m\e[1m⚡ \e[21m\e[0mtest - test\n------\nУспешно: 0\nОшибок: 0\nПропущено: 0\n------\n") {
             $test->fail('Выводимое сообщение не соответствует ожидаемому');
         }
     }
@@ -100,7 +100,7 @@ class ReportTest
         $output = ob_get_contents();
         ob_end_clean();
 
-        if ($output !== "prefix\e[1m\e[91m⚡ \e[0m\e[21mtest - test\n------\nУспешно: 0\nОшибок: 0\nПропущено: 0\n------\n") {
+        if ($output !== "prefix\e[91m\e[1m⚡ \e[21m\e[0mtest - test\n------\nУспешно: 0\nОшибок: 0\nПропущено: 0\n------\n") {
             $test->fail('Выводимое сообщение не соответствует ожидаемому');
         }
     }
@@ -120,7 +120,7 @@ class ReportTest
         $output = ob_get_contents();
         ob_end_clean();
 
-        if ($output !== "\e[1m\e[91m⚡ \e[0m\e[21mtest - test\n\e[1m\e[91m⚡ \e[0m\e[21mtest - test\n------\nУспешно: 0\nОшибок: 0\nПропущено: 0\n------\n") {
+        if ($output !== "\e[91m\e[1m⚡ \e[21m\e[0mtest - test\n\e[91m\e[1m⚡ \e[21m\e[0mtest - test\n------\nУспешно: 0\nОшибок: 0\nПропущено: 0\n------\n") {
             $test->fail('Выводимое сообщение не соответствует ожидаемому');
         }
     }
@@ -139,7 +139,7 @@ class ReportTest
         $output = ob_get_contents();
         ob_end_clean();
 
-        if ($output !== "\e[1m\e[34m⏭ \e[0m\e[21mtest - test\n------\nУспешно: 0\nОшибок: 0\nПропущено: 1\n------\n") {
+        if ($output !== "\e[34m\e[1m⏭ \e[21m\e[0mtest - test\n------\nУспешно: 0\nОшибок: 0\nПропущено: 1\n------\n") {
             $test->fail('Выводимое сообщение не соответствует ожидаемому');
         }
     }
@@ -158,7 +158,7 @@ class ReportTest
         $output = ob_get_contents();
         ob_end_clean();
 
-        if ($output !== "prefix\e[1m\e[34m⏭ \e[0m\e[21mtest - test\n------\nУспешно: 0\nОшибок: 0\nПропущено: 1\n------\n") {
+        if ($output !== "prefix\e[34m\e[1m⏭ \e[21m\e[0mtest - test\n------\nУспешно: 0\nОшибок: 0\nПропущено: 1\n------\n") {
             $test->fail('Выводимое сообщение не соответствует ожидаемому');
         }
     }
@@ -178,7 +178,7 @@ class ReportTest
         $output = ob_get_contents();
         ob_end_clean();
 
-        if ($output !== "\e[1m\e[34m⏭ \e[0m\e[21mtest - test\n\e[1m\e[34m⏭ \e[0m\e[21mtest - test\n------\nУспешно: 0\nОшибок: 0\nПропущено: 2\n------\n") {
+        if ($output !== "\e[34m\e[1m⏭ \e[21m\e[0mtest - test\n\e[34m\e[1m⏭ \e[21m\e[0mtest - test\n------\nУспешно: 0\nОшибок: 0\nПропущено: 2\n------\n") {
             $test->fail('Выводимое сообщение не соответствует ожидаемому');
         }
     }
@@ -197,7 +197,7 @@ class ReportTest
         $output = ob_get_contents();
         ob_end_clean();
 
-        if ($output !== "\e[1m\e[32m✔ \e[0m\e[21mtest\n------\nУспешно: 1\nОшибок: 0\nПропущено: 0\n------\n") {
+        if ($output !== "\e[32m\e[1m✔ \e[21m\e[0mtest\n------\nУспешно: 1\nОшибок: 0\nПропущено: 0\n------\n") {
             $test->fail('Выводимое сообщение не соответствует ожидаемому');
         }
     }
@@ -216,7 +216,7 @@ class ReportTest
         $output = ob_get_contents();
         ob_end_clean();
 
-        if ($output !== "prefix\e[1m\e[32m✔ \e[0m\e[21mtest\n------\nУспешно: 1\nОшибок: 0\nПропущено: 0\n------\n") {
+        if ($output !== "prefix\e[32m\e[1m✔ \e[21m\e[0mtest\n------\nУспешно: 1\nОшибок: 0\nПропущено: 0\n------\n") {
             $test->fail('Выводимое сообщение не соответствует ожидаемому');
         }
     }
@@ -236,7 +236,7 @@ class ReportTest
         $output = ob_get_contents();
         ob_end_clean();
 
-        if ($output !== "\e[1m\e[32m✔ \e[0m\e[21mtest\n\e[1m\e[32m✔ \e[0m\e[21mtest\n------\nУспешно: 2\nОшибок: 0\nПропущено: 0\n------\n") {
+        if ($output !== "\e[32m\e[1m✔ \e[21m\e[0mtest\n\e[32m\e[1m✔ \e[21m\e[0mtest\n------\nУспешно: 2\nОшибок: 0\nПропущено: 0\n------\n") {
             $test->fail('Выводимое сообщение не соответствует ожидаемому');
         }
     }
@@ -255,7 +255,7 @@ class ReportTest
         $output = ob_get_contents();
         ob_end_clean();
 
-        if ($output !== "\e[1m\e[34m↳ \e[0m\e[21mtest\n------\nУспешно: 0\nОшибок: 0\nПропущено: 0\n------\n") {
+        if ($output !== "\e[34m\e[1m↳ \e[21m\e[0mtest\n------\nУспешно: 0\nОшибок: 0\nПропущено: 0\n------\n") {
             $test->fail('Выводимое сообщение не соответствует ожидаемому');
         }
     }
@@ -274,7 +274,7 @@ class ReportTest
         $output = ob_get_contents();
         ob_end_clean();
 
-        if ($output !== "prefix\e[1m\e[34m↳ \e[0m\e[21mtest\n------\nУспешно: 0\nОшибок: 0\nПропущено: 0\n------\n") {
+        if ($output !== "prefix\e[34m\e[1m↳ \e[21m\e[0mtest\n------\nУспешно: 0\nОшибок: 0\nПропущено: 0\n------\n") {
             $test->fail('Выводимое сообщение не соответствует ожидаемому');
         }
     }
@@ -294,7 +294,7 @@ class ReportTest
         $output = ob_get_contents();
         ob_end_clean();
 
-        if ($output !== "\e[1m\e[34m↳ \e[0m\e[21mtest\n\e[1m\e[34m↳ \e[0m\e[21mtest\n------\nУспешно: 0\nОшибок: 0\nПропущено: 0\n------\n") {
+        if ($output !== "\e[34m\e[1m↳ \e[21m\e[0mtest\n\e[34m\e[1m↳ \e[21m\e[0mtest\n------\nУспешно: 0\nОшибок: 0\nПропущено: 0\n------\n") {
             $test->fail('Выводимое сообщение не соответствует ожидаемому');
         }
     }
