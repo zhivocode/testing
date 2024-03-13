@@ -180,7 +180,7 @@ final class Engine
         }
 
         $this->test(
-            $reflectionTestClass->getShortName(),
+            $reflectionTestClass->getName(),
             fn(ITest $test) => $this->loadTestCase($test, $reflectionTestClass, $testCase)
         );
     }
