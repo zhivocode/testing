@@ -49,4 +49,14 @@ interface ITest
      * @return void
      */
     public function skip(string $message, string|int|float ...$arguments): void;
+
+    /**
+     * Ожидает возникновения исключения
+     *
+     * @param string  $exceptionClass
+     * @param Closure $inspector
+     *
+     * @return void
+     */
+    public function expectException(string $exceptionClass, Closure $inspector): void;
 }

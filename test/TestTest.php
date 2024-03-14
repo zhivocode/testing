@@ -130,12 +130,13 @@ class TestTest
 
         ob_start();
 
-        try {
-            $testingObj->run();
-            $test->fail('Ожидалось исключение "FatalException", но оно не возникло');
-            // phpcs:ignore
-        } catch (FatalException) {
-        }
+        $testingObj->expectException(
+            FatalException::class,
+            fn() => $test->fail('Ожидалось исключение "FatalException", но оно не возникло')
+        );
+
+        $testingObj->run();
+
         ob_end_clean();
 
         if ($report->getOutputCode() !== 1) {
